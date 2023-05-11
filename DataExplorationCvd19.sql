@@ -1,7 +1,7 @@
 SELECT *
-From  [dbo].[CovidDeaths]
-Where continent is not NULL
-Order by 3,4
+FROM  [dbo].[CovidDeaths]
+WHERE continent is not NULL
+ORDER BY 3,4
 
 --SELECT *
 --From [dbo].[CovidVaccinations]
@@ -10,17 +10,17 @@ Order by 3,4
 -- Select Data that we are going to be using
 
 SELECT location, date, total_cases, new_cases, total_deaths, population
-From  [dbo].[CovidDeaths]
-Where continent is not NULL
-Order by 1,2
+FROM  [dbo].[CovidDeaths]
+WHERE continent is not NULL
+ORDER BY 1,2
 
 
 -- Looking at Total Cases vs Total Deaths
 -- Shows likelihood of dying if one contracts covid in the United Kingdom
 SELECT location, date, total_cases, total_deaths, cast(total_deaths/cast(total_cases as float) as float)*100 as DeathPercentage
-From  [dbo].[CovidDeaths]
-Where location like '%kingdom%' 
-Order by 1,2
+FROM  [dbo].[CovidDeaths]
+WHERE location like '%kingdom%' 
+ORDER BY 1,2
 
 --Observations
 --Highest death percentage rate peaked at 22.9% on 23/04/2020
@@ -28,17 +28,17 @@ Order by 1,2
 -- Looking at the Total Cases vs Population
 -- Shows what percentage of population contracted covid
 SELECT location, date, Population, total_cases, cast(total_cases/cast(population as float) as float)*100 as PercentPopulationInfected
-From  [dbo].[CovidDeaths]
-Where location like '%kingdom%'
-Order by 1,2
+FROM  [dbo].[CovidDeaths]
+WHERE location like '%kingdom%'
+ORDER BY 1,2
 
 
 -- Looking at Countries with Highest Infection Rate compared to Population (and has been reported)
 SELECT location, Population, MAX(total_cases) as HighestInfectionCount, MAX(cast(total_cases/cast(population as float) as float))*100 as PercentPopulationInfected
-From  [dbo].[CovidDeaths]
+FROM  [dbo].[CovidDeaths]
 -- Where location like '%kingdom%'
-Group by Location, Population
-Order by PercentPopulationInfected DESC
+GROUP BY Location, Population
+ORDER BY PercentPopulationInfected DESC
 
 -- Observations
 -- Cyprus retains the highest infection rate percentage at 73.5% which has been reported
@@ -47,11 +47,11 @@ Order by PercentPopulationInfected DESC
 
 -- Showing the Countries with the Highest Death Count per Population
 SELECT location, MAX(total_deaths) as TotalDeathCount
-From  [dbo].[CovidDeaths]
+FROM  [dbo].[CovidDeaths]
 -- Where location like '%kingdom%'
-Where continent is not NULL
-Group by Location
-Order by TotalDeathCount DESC
+WHERE continent is not NULL
+GROUP BY Location
+ORDER BY TotalDeathCount DESC
 
 -- Observations
 -- United States has the highest total death count
@@ -62,11 +62,11 @@ Order by TotalDeathCount DESC
 
 -- Showing the continents with the highest death count per population
 SELECT continent, MAX(total_deaths) as TotalDeathCount
-From  [dbo].[CovidDeaths]
+FROM  [dbo].[CovidDeaths]
 -- Where location like '%kingdom%'
-Where continent is not NULL
-Group by continent
-Order by TotalDeathCount DESC
+WHERE continent is not NULL
+GROUP BY continent
+ORDER BY TotalDeathCount DESC
 
 
 -- GLOBAL NUMBERS (all countries are grouped by date (aggregated on a per day basis)
@@ -75,11 +75,11 @@ SELECT date,
 	SUM(new_cases) as total_cases, 
 	SUM(new_deaths) as total_deaths, 
 	ISNULL(Sum(cast(new_deaths as float)) / NULLIF(Sum(cast(new_cases as float)), 0), 0)*100 AS DeathPercentage
-From  [dbo].[CovidDeaths]
+FROM  [dbo].[CovidDeaths]
 -- Where location like '%kingdom%'
-Where continent is not NULL
-Group by date
-Order by 1,2
+WHERE continent is not NULL
+GROUP BY date
+ORDER BY 1,2
 
 
 -- Working...
@@ -93,11 +93,11 @@ SELECT
 	SUM(new_cases) as total_cases, 
 	SUM(new_deaths) as total_deaths, 
 	ISNULL(Sum(cast(new_deaths as float)) / NULLIF(Sum(cast(new_cases as float)), 0), 0)*100 AS DeathPercentage
-From  [dbo].[CovidDeaths]
+FROM  [dbo].[CovidDeaths]
 -- Where location like '%kingdom%'
-Where continent is not NULL
+WHERE continent is not NULL
 -- Group by date
-Order by 1,2
+ORDER BY 1,2
 
 -- Observations:
 -- 765,237,638 total cases worldwide
