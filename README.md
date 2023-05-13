@@ -38,6 +38,8 @@ The objective is to perform data exploration of Covid-19 using Microsoft's SQL S
 ## Tableau Viz link
 
 ## Methods
+- SQL querying
+- Data visualization (Tableau)
 
 ## Tech Stack
 - Microsoft SQL Server Management Studio
@@ -47,6 +49,10 @@ The objective is to perform data exploration of Covid-19 using Microsoft's SQL S
 ### Query Methods
 
 ## Types of Graphs
+- Forecasting Line Chart: This chart combines historical data with a predictive model to visualize future trends or projections for four countries based on the existing data patterns.
+- Geographic Map: This shows the percent of the population affected across different countries. 
+- Heatmap: The heatmap here is associated with the geographic map. It can represent the intensity or density of Covid-19 cases in different geographic areas. It uses color gradients to visually depict the severity of the situation, allowing for quick identification of hotspots or regions with higher infection rates.
+- Bar Chart: Displays the mortality count per continent.
 
 ## Quick Analysis of Results
 ### Tableau Dashboard
