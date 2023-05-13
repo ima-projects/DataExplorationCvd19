@@ -76,7 +76,7 @@ The objective is to perform data exploration of Covid-19 using Microsoft's SQL S
 
 #### Data Accuracy 
 - Datasets might contain inaccuracies due to errors in data entry, data cleaning, or data integration processes. Inaccurate data can lead to incorrect analyses and interpretations.
-- This may also be exacerbated by differing methods in which countries collect data and the lack global standarization ineffciencies.
+- This may also be exacerbated by differing methods in which countries collect data and the lack standarized global data collection methods.
 
 #### Data Granularity
 - COVID-19 data is often reported at different levels of granularity, such as country, region, or city. Inconsistencies in granularity can hinder data analysis and make it challenging to draw meaningful conclusions at a specific level.
