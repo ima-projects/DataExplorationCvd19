@@ -16,7 +16,7 @@ Performing data exploration of Covid-19 using Microsoft's SQL Server Management 
 - [Quick Analysis of Results](#quick-analysis-of-results)
   * [Tableau Dashboard](#tableau-dashboard)
   * [Key findings](#key-findings)
-  * [Limitations and Suggestions for Optimization of the Dashboard](#limitations-and-suggestions-for-optimization-of-the-dashboard)
+  * [Limitations and Suggestions](#limitations-and-suggestions)
 
 
 ## Business Problem
@@ -53,7 +53,8 @@ The objective is to perform data exploration of Covid-19 using Microsoft's SQL S
 - Joined the two table sources.
 - Used CTEs (Common Table Expression) to be able to perform calculations. This calculaties the rolling number of people vaccinated, recursively.
 - Created a temp table named #PercentPopulationVaccinated and populated it with data from two source tables (CovidDeaths and CovidVaccinations), calculating the rolling number of people vaccinated, and then selects all data from the temporary table with an additional column representing the percentage of rolling people vaccinated per population, ordered by location and date.
-- Used CAST to convert data types like bigint to float to be able to display decimal points 
+- Used CAST function to convert data types like bigint to float to be able to display decimal points 
+- Created a 'View' to store data for later visualisations
 
 ## Types of Graphs
 - Forecasting Line Chart: This chart combines historical data with a predictive model to visualize future trends or projections for four countries based on the existing data patterns.
@@ -65,6 +66,23 @@ The objective is to perform data exploration of Covid-19 using Microsoft's SQL S
 ## Quick Analysis of Results
 ### Tableau Dashboard
 ### Key findings
-### Limitations and Suggestions for Optimization of the Dashboard
+- Cyprus retains the highest infection rate percentage at 73.5% which has been reported
+- United Kingdom mortality rate as of May 2023: 0.9%
+- High percentage of people vaccinated
+-
+### Limitations and Suggestions
+#### Data Completeness
+- COVID-19 datasets may have missing or incomplete data due to various reasons such as reporting delays, inconsistencies in data collection, or incomplete testing. This can lead to gaps in the dataset, making it challenging to obtain a comprehensive understanding of the situation.
 
+### Data Accuracy 
+- Datasets might contain inaccuracies due to errors in data entry, data cleaning, or data integration processes. Inaccurate data can lead to incorrect analyses and interpretations.
+- This may also be exacerbated by differing methods in which countries collect data and the lack global standarization ineffciencies.
 
+#### Data Granularity
+- COVID-19 data is often reported at different levels of granularity, such as country, region, or city. Inconsistencies in granularity can hinder data analysis and make it challenging to draw meaningful conclusions at a specific level.
+
+#### Data Bias
+- Datasets might exhibit biases due to variations in testing practices, access to healthcare, or reporting biases in different regions or population groups. These biases can skew the analysis results and provide an incomplete picture of the COVID-19 situation.
+
+#### Data Integration
+- COVID-19 datasets often need to be combined with other datasets (e.g., demographic or healthcare data) to gain more comprehensive insights. Integrating heterogeneous datasets from various sources can be complex and time-consuming.
