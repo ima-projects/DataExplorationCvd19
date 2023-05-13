@@ -47,12 +47,20 @@ The objective is to perform data exploration of Covid-19 using Microsoft's SQL S
 
 ## SQL Queries Analysis
 ### Query Methods
+- Column division to obtain a motality percentage in the United Kingdom.
+- Identified the percentage of the population who were infected in the United Kindgdom using aggregate function (MAX).
+- Identified country with the highest infection rate and aggregate global rates.
+- Joined the two table sources.
+- Used CTEs (Common Table Expression) to be able to perform calculations.
+- Created a temp table named #PercentPopulationVaccinated and populates it with data from two source tables (CovidDeaths and CovidVaccinations), calculating the rolling number of people vaccinated, and then selects all data from the temporary table with an additional column representing the percentage of rolling people vaccinated per population, ordered by location and date.
+- Used CAST to convert data types like bigint to float to be able to display decimal points 
 
 ## Types of Graphs
 - Forecasting Line Chart: This chart combines historical data with a predictive model to visualize future trends or projections for four countries based on the existing data patterns.
 - Geographic Map: This shows the percent of the population affected across different countries. 
 - Heatmap: The heatmap here is associated with the geographic map. It can represent the intensity or density of Covid-19 cases in different geographic areas. It uses color gradients to visually depict the severity of the situation, allowing for quick identification of hotspots or regions with higher infection rates.
 - Bar Chart: Displays the mortality count per continent.
+- Table: Displays global numbers.
 
 ## Quick Analysis of Results
 ### Tableau Dashboard
