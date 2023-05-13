@@ -74,7 +74,7 @@ The objective is to perform data exploration of Covid-19 using Microsoft's SQL S
 #### Data Completeness
 - COVID-19 datasets may have missing or incomplete data due to various reasons such as reporting delays, inconsistencies in data collection, or incomplete testing. This can lead to gaps in the dataset, making it challenging to obtain a comprehensive understanding of the situation.
 
-### Data Accuracy 
+#### Data Accuracy 
 - Datasets might contain inaccuracies due to errors in data entry, data cleaning, or data integration processes. Inaccurate data can lead to incorrect analyses and interpretations.
 - This may also be exacerbated by differing methods in which countries collect data and the lack global standarization ineffciencies.
 
