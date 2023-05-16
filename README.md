@@ -65,6 +65,8 @@ The objective is to perform data exploration of Covid-19 using Microsoft's SQL S
 
 ## Quick Analysis of Results
 ### Tableau Dashboard
+<img src="./DataVizCvd19.png" alt="data visualization">
+
 ### Key findings
 - Cyprus retains the highest infection rate percentage at 73.5% which has been reported
 - United Kingdom current mortality rate as of May 2023: 0.9%
